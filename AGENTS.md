@@ -50,4 +50,4 @@ On the VPS, `~/docker/manual-refresh` is a clone of this repo: `git pull --ff-on
 ---
 
 **Last Updated**: 2026-10-17
-**Current Version**: 1.1.0
+**Current Version**: 1.1.1
