@@ -1,0 +1,5 @@
+requests
+pymysql
+beautifulsoup4
+pytz
+python-dotenv

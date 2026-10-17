@@ -1,0 +1,24 @@
+# Environment / secrets — must never be baked into the image
+.env
+.env.*
+!.env.example
+
+__pycache__/
+*.pyc
+*.pyo
+*.log
+.venv/
+.vscode/
+.idea/
+.cache/
+data/**/raw/
+data/**/tmp/
+models/
+
+# Git / VCS
+.git/
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
