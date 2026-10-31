@@ -17,7 +17,7 @@ Copy [.env.example](.env.example) to `.env` and fill it in. `.env` is git-ignore
 | --- | --- |
 | `WIKIMEDIA_USER_AGENT` | User agent sent to Wikimedia APIs, with a contact ([policy](https://meta.wikimedia.org/wiki/User-Agent_policy)). Required. |
 | `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD` | MariaDB connection. |
-| `DB_NAMESPACE` | Table prefix (default `T_WC_`). |
+| `DB_NAMESPACE` | Table prefix (`T_WC_` in `.env.example`; the code has no default). |
 | `USER_TIMEZONE` | IANA timezone (e.g. `Europe/Paris`). |
 | `TMDB_API_DOMAIN_URL`, `TMDB_API_KEY`, `TMDB_API_TOKEN` | TMDb API access. |
 | `WIKIPEDIA_CRAWLER_WORKERS`, `WIKIPEDIA_CRAWLER_MAX_RPS` | Optional Wikipedia fetch workers and request rate (defaults 8 and 20). |
@@ -37,9 +37,9 @@ cd ~/docker/manual-refresh
 >>> ue.f_updateqids("Q1092,Q845176,", "collection")
 ```
 
-Each call returns `{"tmdb": code, "wikipedia": summary}`, with code `1` OK, `0` gone, `-1` transient error. Options: `blnforce=True` retries an id TMDb once reported as gone, `blnwikipedia=False` skips Wikipedia, `blnseasons=False` (series) skips seasons and episodes.
+`f_updatemovie`, `f_updateserie` and `f_updateperson` return `{"tmdb": code, "wikipedia": summary}`, with code `1` OK, `0` gone, `-1` transient error. Options: `blnforce=True` retries an id TMDb once reported as gone, `blnwikipedia=False` skips Wikipedia, `blnseasons=False` (series) skips seasons and episodes.
 
-Valid families for `f_updateqids`: movie, serie, person, item, list, movement, collection (T2S collection), tmdbcollection (TMDb collection), group, death, award, nomination, topic, technical, character, wikidatacharacter, episode, keyword, season, sourcework, other.
+`f_updateqids` returns `(summaries, failures)`, the failures as `(qid, error)` pairs. Valid families for `f_updateqids`: movie, serie, person, item, list, movement, collection (T2S collection), tmdbcollection (TMDb collection), group, death, award, nomination, topic, technical, character, wikidatacharacter, episode, keyword, season, sourcework, other.
 
 To stay gentler on Wikimedia than the main crawler (the rate limit is per process):
 
