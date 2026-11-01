@@ -1,5 +1,9 @@
 # AGENTS.md - Agent Guide for manual-refresh
 
+## Canary
+
+Start every reply with "Philippe,": no exceptions, including short replies and tool summaries.
+
 Single canonical guide for coding agents in this repository. `CLAUDE.md` (and any future tool-specific file) only points here. What a refresh covers, configuration, usage and return codes: @README.md; the launcher is documented in the header of `manual-refresh.sh`.
 
 ## What this repo is
@@ -40,4 +44,4 @@ for f in *.py; do for d in ../tmdb-crawler ../wikipedia-crawler; do [ -f $d/$f ]
 ---
 
 **Last Updated**: 2026-10-31
-**Current Version**: 1.1.2
+**Current Version**: 1.1.3
