@@ -8,7 +8,7 @@ Single canonical guide for coding agents in this repository. `CLAUDE.md` (and an
 
 ## What this repo is
 
-Interactive one-off console (Agent BBB, "Maintenance & tooling"; an untracked folder named `python` until 2026-10-17) that refreshes one entity by hand, beside the always-on `tmdb-crawler` and `wikipedia-crawler` containers, writing to the same `T_WC_*` tables. Only `update_entity.py` and `manual-refresh.sh` are its own.
+Interactive one-off console (Cinephile App, "Maintenance & tooling"; an untracked folder named `python` until 2026-10-17) that refreshes one entity by hand, beside the always-on `tmdb-crawler` and `wikipedia-crawler` containers, writing to the same `T_WC_*` tables. Only `update_entity.py` and `manual-refresh.sh` are its own.
 
 ## Copies, never edited here
 
